@@ -29,10 +29,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Edit() {
+function Edit(props) {
+  const {
+    attributes,
+    setAttributes
+  } = props;
+  const {
+    content
+  } = attributes;
   const blockprops = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
     className: "Dummy-first-class-edit-here"
   });
+
+  //console.log(content);
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarGroup, {
@@ -80,11 +90,18 @@ function Edit() {
       group: "advanced",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
         label: "Fixed Background",
-        onChange: () => console.log('Background Changed')
+        onChange: () => console.log("Background Changed")
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       ...blockprops,
-      children: "Editor Part"
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+        tagName: "p",
+        value: content,
+        onChange: content => setAttributes({
+          content
+        }),
+        placeholder: "Enter Your text here..."
+      })
     })]
   });
 }
@@ -168,7 +185,7 @@ __webpack_require__.r(__webpack_exports__);
         })
       })
     }),
-    background: "red"
+    background: "skyblue"
   },
   /**
    * @see ./edit.js
@@ -214,13 +231,19 @@ __webpack_require__.r(__webpack_exports__);
  * @return {Element} Element to render.
  */
 
-function save() {
+function save(props) {
+  const {
+    content
+  } = props.attributes;
   const blockprops = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
     className: "Dummy-first-class-frontend-here"
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     ...blockprops,
-    children: "First Block – hello from the saved content!D"
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+      tagName: "p",
+      value: content
+    })
   });
 }
 
@@ -316,7 +339,7 @@ module.exports = window["wp"]["element"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/first-block","version":"0.1.0","title":"First Block","category":"media","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"anchor":true,"align":true,"color":{"gradients":true,"background":true,"text":true},"spacing":{"margin":true,"padding":true,"blockGap":true},"typography":{"fontSize":true,"lineHeight":true,"textAlign":true}},"textdomain":"first-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/first-block","version":"0.1.0","title":"First Block","category":"media","description":"Example block scaffolded with Create Block tool.","example":{},"attributes":{"content":{"type":"string","default":"Default Text here for string type data"}},"supports":{"anchor":true,"align":true,"color":{"gradients":true,"background":true,"text":true},"spacing":{"margin":true,"padding":true,"blockGap":true},"typography":{"fontSize":true,"lineHeight":true,"textAlign":true}},"textdomain":"first-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

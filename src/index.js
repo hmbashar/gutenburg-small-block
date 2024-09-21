@@ -63,7 +63,7 @@ registerBlockType(metadata.name, {
 				</g>
 			</svg>
 		),
-		background:"red",
+		background:"skyblue",
 	},
 	/**
 	 * @see ./edit.js

@@ -7,6 +7,12 @@
 	"category": "media",
 	"description": "Example block scaffolded with Create Block tool.",
 	"example": {},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"default": "Default Text here for string type data"
+		}
+	},
 	"supports": {
 		"anchor" : true,
 		"align": true,
