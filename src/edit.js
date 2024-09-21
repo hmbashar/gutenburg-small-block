@@ -2,7 +2,7 @@ import "./editor.scss";
 
 import { useBlockProps, BlockControls, InspectorControls } from "@wordpress/block-editor";
 import { Fragment } from "@wordpress/element";
-import {ToolbarButton, ToolbarGroup, TextControl, PanelBody, ColorPalette} from "@wordpress/components";
+import {ToolbarButton, ToolbarGroup, TextControl, PanelBody, ColorPalette, ToggleControl} from "@wordpress/components";
 import { withState } from '@wordpress/compose';
 
 export default function Edit() {
@@ -46,15 +46,14 @@ export default function Edit() {
 				</PanelBody>
 			</InspectorControls>
 			
-			<InspectorControls group="styles">       
+			<InspectorControls group="advanced">       
 				 
-				<PanelBody title="Block Style" initialOpen={false} icon="admin-generic">					
-					
-					<ColorPalette 
-						onChange={ ( color ) => console.log(color)  } 
+			
+					<ToggleControl
+						label="Fixed Background"
+						onChange={ () => console.log('Background Changed') }
 					/>
-					
-				</PanelBody>
+				
 			</InspectorControls>
 
 
