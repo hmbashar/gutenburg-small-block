@@ -9,7 +9,22 @@
 	"example": {},
 	"supports": {
 		"anchor" : true,
-		"align": true
+		"align": true,
+		"color": {
+			"gradients": true,
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"margin":true,
+			"padding":true,
+			"blockGap":true
+		},
+	    "typography": {			
+			"fontSize": true,			
+			"lineHeight": true,			
+			"textAlign": true
+		}
 	},
 	"textdomain": "first-block",
 	"editorScript": "file:./index.js",
