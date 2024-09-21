@@ -231,10 +231,12 @@ __webpack_require__.r(__webpack_exports__);
  * @return {Element} Element to render.
  */
 
-function save(props) {
+function save({
+  attributes
+}) {
   const {
     content
-  } = props.attributes;
+  } = attributes;
   const blockprops = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
     className: "Dummy-first-class-frontend-here"
   });

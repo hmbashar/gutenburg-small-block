@@ -15,8 +15,8 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
  *
  * @return {Element} Element to render.
  */
-export default function save(props) {
-	const { content } = props.attributes;
+export default function save({attributes}) {
+	const { content } = attributes;
 	const blockprops = useBlockProps.save({
 		className: "Dummy-first-class-frontend-here",
 	});
